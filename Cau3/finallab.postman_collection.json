@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "cec0fca3-1c2a-4d2d-b7b0-0d3b77a2298d",
+		"name": "finallab",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19976144",
+		"_collection_link": "https://blue-shuttle-12789.postman.co/workspace/DEVNET~db195a76-e612-43b0-a2c0-7526766d2c1f/collection/19976144-cec0fca3-1c2a-4d2d-b7b0-0d3b77a2298d?action=share&creator=19976144&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "authen",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "j_username",
+							"value": "{{username}}",
+							"type": "text"
+						},
+						{
+							"key": "j_password",
+							"value": "{{password}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{vmanage}}/j_security_check",
+					"host": [
+						"{{vmanage}}"
+					],
+					"path": [
+						"j_security_check"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get device",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{vmanage}}/dataservice/device",
+					"host": [
+						"{{vmanage}}"
+					],
+					"path": [
+						"dataservice",
+						"device"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
